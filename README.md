@@ -34,7 +34,7 @@ It is intended to be consumed via a GitHub dependency:
 ```json
 {
   "dependencies": {
-    "worldformat": "github:worldformat/worldformat"
+    "worldformat": "github:lcmaren/worldformat#v0.1.0"
   }
 }
 ```
@@ -54,14 +54,6 @@ It intentionally does **not** include:
 - storage layers
 
 Those concerns belong elsewhere.
-
-## Related Projects
-
-- **[worldformat.org](https://github.com/worldformat/worldformat.org)**  
-  The official website hosting the World Format definition and rationale.
-
-- **[worldstore](https://github.com/worldformat/worldstore)**  
-  A reference implementation and host for World files.
 
 ## License
 
