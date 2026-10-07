@@ -27,17 +27,26 @@ as the format evolves.
 
 ## Usage
 
-This package is not published to npm.
-
-It is intended to be consumed via a GitHub dependency:
-
-```json
-{
-  "dependencies": {
-    "worldformat": "github:lcmaren/worldformat#v0.1.0"
-  }
-}
+```sh
+npm install worldformat
 ```
+
+```ts
+import { parse, validate } from "worldformat";
+
+const world = parse(`
+[task]
+name = "Test"
+done = false
+`);
+// → { task: { name: "Test", done: false } }
+
+validate("name = 1"); // → false: an attribute needs a node above it
+```
+
+`parse` throws on an invalid document; `validate` returns `false` instead.
+
+The package is ESM only.
 
 ## Scope
 
@@ -57,4 +66,4 @@ Those concerns belong elsewhere.
 
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE).

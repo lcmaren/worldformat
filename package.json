@@ -1,28 +1,44 @@
 {
   "name": "worldformat",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Reference implementation of the World format (parser and related utilities).",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
   "scripts": {
-    "build": "tsc",
-    "clean": "rm -rf dist",
-    "test": "tsx tests/parse.test.ts"
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "check": "tsc --noEmit",
+    "test": "tsx tests/parse.test.ts",
+    "prepack": "pnpm build"
   },
   "keywords": [
     "worldformat",
     "parser"
   ],
-  "author": "worldformat (https://worldformat.org/)",
+  "author": "L. C. Maren",
   "license": "MIT",
   "packageManager": "pnpm@10.27.0",
-  "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/lcmaren/worldformat.git"
+    "url": "git+https://github.com/lcmaren/worldformat.git"
+  },
+  "homepage": "https://github.com/lcmaren/worldformat#readme",
+  "bugs": {
+    "url": "https://github.com/lcmaren/worldformat/issues"
   },
   "devDependencies": {
     "@types/node": "^25.0.3",
-    "tsx": "^4.21.0"
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   }
 }
