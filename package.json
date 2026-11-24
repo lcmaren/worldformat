@@ -1,7 +1,7 @@
 {
   "name": "worldformat",
-  "version": "0.2.0",
-  "description": "Reference implementation of the World format (parser and related utilities).",
+  "version": "0.3.0",
+  "description": "Reference implementation of the World format (parser, stringifier and related utilities).",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -18,12 +18,13 @@
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.build.json",
     "check": "tsc --noEmit",
-    "test": "tsx tests/parse.test.ts",
+    "test": "tsx tests/parse.test.ts && tsx tests/stringify.test.ts",
     "prepack": "pnpm build"
   },
   "keywords": [
     "worldformat",
-    "parser"
+    "parser",
+    "stringify"
   ],
   "author": "L. C. Maren",
   "license": "MIT",
